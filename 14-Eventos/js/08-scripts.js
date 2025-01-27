@@ -1,4 +1,4 @@
-// Evitar la propagación con contenido creado...
+// Para evitar el Event Bubbling, con funciones. En párrafo 3. Común para generar HTML sobretodo en APIs.
 const parrafo1 = document.createElement('P');
 parrafo1.textContent = 'Concierto';
 parrafo1.classList.add('categoria');
@@ -13,6 +13,13 @@ parrafo2.classList.add('titulo');
 const parrafo3 = document.createElement('p');
 parrafo3.textContent = '$800 por persona';
 parrafo3.classList.add('precio');
+parrafo3.onclick = function () {
+    nuevaFuncion(1);
+};
+
+function nuevaFuncion(id) {
+    console.log('Desde nueva función', id);
+}
 
 // crear el div...
 const info = document.createElement('div');
